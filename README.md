@@ -1,3 +1,3 @@
 # Dpaste++(Dpaste-plus-plus)
-一个支持多平台基于mysql数据库的剪贴板同步工具.
-A support for multi-platform mysql database based clipboard synchronization tool
+一个基于mysql和c++的多平台同步剪贴板工具
+A mysql and c++ based multi - platform synchronization clipboard tool

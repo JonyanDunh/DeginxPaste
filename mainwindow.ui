@@ -78,7 +78,7 @@
     <property name="geometry">
      <rect>
       <x>19</x>
-      <y>28</y>
+      <y>30</y>
       <width>331</width>
       <height>21</height>
      </rect>
@@ -103,7 +103,7 @@
     <property name="geometry">
      <rect>
       <x>332</x>
-      <y>-6</y>
+      <y>0</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -117,42 +117,6 @@
     </property>
     <property name="flat">
      <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>2</x>
-      <y>-1</y>
-      <width>21</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset theme="/Users/dengjunyuan/Pictures/letter/错误.png">
-      <normaloff>../Pictures/letter/错误.png</normaloff>../Pictures/letter/错误.png</iconset>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>152</x>
-      <y>0</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Dpaste++</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignHCenter|Qt::AlignTop</set>
     </property>
    </widget>
   </widget>

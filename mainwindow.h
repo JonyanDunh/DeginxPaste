@@ -28,8 +28,6 @@ private slots:
    void logins();
    void on_lineEdit_textChanged(const QString &);
    void on_pushButton_clicked();
-   void on_pushButton_3_clicked();
-
 protected:
     void mousePressEvent(QMouseEvent *e);
     void mouseMoveEvent(QMouseEvent *e);

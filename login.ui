@@ -95,7 +95,7 @@
    </property>
    <property name="icon">
     <iconset theme="/Users/dengjunyuan/Pictures/letter/错误.png">
-     <normaloff>.</normaloff>.</iconset>
+     <normaloff>../Pictures/letter/错误.png</normaloff>../Pictures/letter/错误.png</iconset>
    </property>
    <property name="flat">
     <bool>true</bool>

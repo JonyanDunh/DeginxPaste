@@ -47,7 +47,7 @@ void login::chicklogin()
     mysql_library_init(0, NULL, NULL);
     mysql_init(&mydata);
     //mysql_options(&mydata, MYSQL_SET_CHARSET_NAME, "gbk");
-    mysql_real_connect(&mydata, "linux.deginx.com", "root", "A072107", "Dpasteplusplus", 3306, NULL, 0);
+    mysql_real_connect(&mydata, "linux.deginx.com", "Dpasteplusplus", "b17535039a", "Dpasteplusplus", 3306, NULL, 0);
     sqltext="select * from user where mail ='"+ sqltext+"'";
     mysql_query(&mydata,sqltext.c_str() );
     result = mysql_store_result(&mydata);

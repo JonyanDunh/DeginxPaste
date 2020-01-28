@@ -36,10 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
     chickuserlogin();
-    setWindowFlags (Qt::FramelessWindowHint);
-    QPalette palette(this->palette());
-    palette.setColor(QPalette::Background, Qt::white);
-    this->setPalette(palette);
+
     ui->listWidget->setStyleSheet(
     "QListWidget::Item:hover{background:#FF3F80; color:#FFFFFF;}"//鼠标经过的颜色
     "QListWidget::item:selected{background:#3E50B4; color:#FFFFFF; }"//点击的颜色
@@ -49,8 +46,8 @@ MainWindow::MainWindow(QWidget *parent)
     //设置调色板
     //背景颜色透明
     pal.setColor(QPalette::Text,QColor(120,120,120));
-    ui->listWidget->setPalette(pal);
     pal.setColor(QPalette::Base,QColor(255,255,255,1));
+    ui->listWidget->setPalette(pal);
     ui->lineEdit->setPalette(pal);
     //应用调色板
     QListWidgetItem *add_item = new QListWidgetItem(ui->listWidget);
@@ -71,6 +68,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(startpastelist, SIGNAL(SendUI(QListWidgetItem *,int)), this, SLOT(ShowInfo(QListWidgetItem *,int)));
     startpastelist->start();
     startpaste->start();
+    ui->pushButton->setStyleSheet(
+    "QPushButton{border-image: url(/Users/dengjunyuan/Pictures/letter/图钉.png);border-top: 1px transparent;border-bottom: 1px transparent;border-right: 7px transparent;border-left: 7px transparent;height:20px;border: 0px solid yello;}"
+    );
 }
 MainWindow::~MainWindow() {
     delete ui;
@@ -84,7 +84,7 @@ void MainWindow::on_listWidget_clicked(const QModelIndex &) {
     int rowcount;
     mysql_library_init(0, NULL, NULL);
     mysql_init(&mydata);
-    mysql_real_connect(&mydata, "linux.deginx.com", "root", "A072107", "Dpasteplusplus", 3306, NULL, 0);
+    mysql_real_connect(&mydata, "linux.deginx.com", "Dpasteplusplus", "b17535039a", "Dpasteplusplus", 3306, NULL, 0);
     string s;
     ifstream File("./Dpaste.dcofig");
     getline(File,s);
@@ -118,7 +118,7 @@ void MainWindow::chickclean()
     MYSQL mydata;
     mysql_library_init(0, NULL, NULL);
     mysql_init(&mydata);
-    mysql_real_connect(&mydata, "linux.deginx.com", "root", "A072107", "Dpasteplusplus", 3306, NULL, 0);
+    mysql_real_connect(&mydata, "linux.deginx.com", "Dpasteplusplus", "b17535039a", "Dpasteplusplus", 3306, NULL, 0);
     string s;
     ifstream File("./Dpaste.dcofig");
     getline(File,s);
@@ -142,7 +142,7 @@ void MainWindow::chicksynchronous()
     mysql_library_init(0, NULL, NULL);
     mysql_init(&mydata);
     mysql_options(&mydata, MYSQL_SET_CHARSET_NAME, "gbk");
-    mysql_real_connect(&mydata, "linux.deginx.com", "root", "A072107", "Dpasteplusplus", 3306, NULL, 0);
+    mysql_real_connect(&mydata, "linux.deginx.com", "Dpasteplusplus", "b17535039a", "Dpasteplusplus", 3306, NULL, 0);
     string s;
     ifstream File("./Dpaste.dcofig");
     getline(File,s);
@@ -188,7 +188,7 @@ chicksynchronous();
     int rowcount;
     mysql_library_init(0, NULL, NULL);
     mysql_init(&mydata);
-    mysql_real_connect(&mydata, "linux.deginx.com", "root", "A072107", "Dpasteplusplus", 3306, NULL, 0);
+    mysql_real_connect(&mydata, "linux.deginx.com", "Dpasteplusplus", "b17535039a", "Dpasteplusplus", 3306, NULL, 0);
     string s;
     ifstream File("./Dpaste.dcofig");
     getline(File,s);
@@ -232,7 +232,7 @@ void MainWindow::on_pushButton_clicked()
     if(setflats==1)
     {
         setflats=0;
-        setWindowFlags(m_flags | Qt::WindowStaysOnTopHint |Qt::FramelessWindowHint);
+        setWindowFlags(m_flags | Qt::WindowStaysOnTopHint);
           show();
     ui->pushButton->setFlat(0);
     }else if(setflats==0)
@@ -240,7 +240,7 @@ void MainWindow::on_pushButton_clicked()
         setflats=1;
         ui->pushButton->setFlat(1);
         m_flags = NULL;
-            setWindowFlags(m_flags|Qt::FramelessWindowHint);
+            setWindowFlags(m_flags);
             show();
     }
 
@@ -261,7 +261,7 @@ void MainWindow::chickuserlogin()
     int rowcount;
     mysql_library_init(0, NULL, NULL);
     mysql_init(&mydata);
-    mysql_real_connect(&mydata, "linux.deginx.com", "root", "A072107", "Dpasteplusplus", 3306, NULL, 0);
+    mysql_real_connect(&mydata, "linux.deginx.com", "Dpasteplusplus", "b17535039a", "Dpasteplusplus", 3306, NULL, 0);
     string s;
     ifstream File("./Dpaste.dcofig");
     getline(File,s);
@@ -316,7 +316,3 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *e)
     move(x()+dx, y()+dy);
 }
 
-void MainWindow::on_pushButton_3_clicked()
-{
-     close();
-}

@@ -37,9 +37,9 @@
 
 ## 开发环境
 
-系统:macOS Catalina版本10.15.3 Beta版(19D75a)
-依赖库:Mysql
-开发工具:Qt Creator 4.11.0
+* 系统:macOS Catalina版本10.15.3 Beta版(19D75a)
+* 依赖库:Mysql
+* 开发工具:Qt Creator 4.11.0
 
 ## 引用
 
